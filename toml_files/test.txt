@@ -1,0 +1,4 @@
+[2022-05-14 16:56:21] INFO - Starting to replacing deployment.toml files in all 5 nodes by taking from the toml_files directory [16/19]
+
+[2022-05-14 16:56:21] INFO - deployment.toml file replacement is success
+
