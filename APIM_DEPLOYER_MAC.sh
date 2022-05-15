@@ -91,14 +91,12 @@ ARGS=$(getopt -a --options fzdbprcasvhu --long "file,zip,base,deployment,passwor
 GWCPDeployment(){
   LOG_STATEMENT="Starting CP GW deployment\n"
   printINFOLog
-  installUnzip
   copyTheBasePackToDirs
 }
 
 TMSeparatedDeployment(){
   LOG_STATEMENT="Starting Traffic Manager separated deployment\n"
   printINFOLog
-  installUnzip
   copyTheBasePackToDirs
 }
 
@@ -381,16 +379,6 @@ fullDeployment(){
 
   LOG_STATEMENT="\n\nNODE DETAILS \n\n----------- Control Plane -----------\n\n * Offset: 2\n * Carbon Console URL: https://localhost:9445/carbon\n * Publisher Access URL: https://localhost:9445/publisher\n * Dev Portal Access URL: https://localhost:9445/devportal\n\n----------- Traffic Manager -----------\n\n * Offset: 1\n * Carbon Console URL: https://localhost:9444/carbon\n\n----------- API Gateway -----------\n\n * Offset: 0\n * Carbon Console URL: https://localhost:9443/carbon\n * HTTP URL: https://localhost:8280\n * HTTPS URL: https://localhost:8243\n\n"
   printConfigDetail
-}
-
-installUnzip(){
-  LOG_STATEMENT="Trying to install Unzip\nYou need to enter the root user credentials to continue\n"
-  printINFOLog
-  
-  sudo apt-get install unzip
-  
-  LOG_STATEMENT="Installed Unzip\n"
-  printINFOLog
 }
 
 extractTheBasePack(){
