@@ -91,7 +91,7 @@ activeActiveDeployment(){
 }
 
 fullDistributedDeployment(){
-  LOG_STATEMENT="Starting pattern 3 deployment\n"
+  LOG_STATEMENT="Starting the fully distributed deployment\n"
   printINFOLog
   installUnzip
   copyTheBasePackToDirsPattern3
@@ -373,7 +373,7 @@ init(){
         exit 1
     fi
 
-    LOG_STATEMENT="\n\nDEPLOYMENT DETAILS \n\n* Deployment Pattern: $deploymentPattern \n* Base Pack Path: $pathToBasePack\n* ZIP Name: $zipFilename\n* Dirctory Name Of The Extracted Content: $extractedPackDirName \n\n"
+    LOG_STATEMENT="\n\nDEPLOYMENT DETAILS \n\n* Deployment Pattern: $deploymentPattern \n* Base Pack Path: $pathToBasePack\n* ZIP Name: $zipFilename\n* Directory Name Of The Extracted Content: $extractedPackDirName \n\n"
     printConfigDetail
 
     LOG_STATEMENT="\n\nDATABASE DETAILS \n\n* JDBC Connector File Path: $pathToMySQLConnectorFile \n* ROOT User Name: $MYSQL_ROOT_USERNAME\n* APIM Database Name: $APIM_DB_WSO2AM_320\n* Shared Database Name: $SHARED_DB_WSO2AM_320\n\n"

@@ -91,14 +91,13 @@ activeActiveDeployment(){
 }
 
 fullDistributedDeployment(){
-  LOG_STATEMENT="Starting pattern 3 deployment\n"
+  LOG_STATEMENT="Starting the fully distributed deployment\n"
   printINFOLog
-  installUnzip
   copyTheBasePackToDirsPattern3
 }
 
 copyTheBasePackToDirsPattern3(){
-  LOG_STATEMENT="Creating the directory structure [2/19]\n"
+  LOG_STATEMENT="Creating the directory structure [1/18]\n"
   printINFOLog
   rm -rf distributed_deployment
   mkdir distributed_deployment
@@ -107,7 +106,7 @@ copyTheBasePackToDirsPattern3(){
   LOG_STATEMENT="Created the directory structure\n"
   printINFOLog
 
-  LOG_STATEMENT="Copying the ZIP pack to 0_gw directory [3/19]\n"
+  LOG_STATEMENT="Copying the ZIP pack to 0_gw directory [2/18]\n"
   printINFOLog
   cp $pathToBasePack 0_gw
   LOG_STATEMENT="Copied the ZIP pack to 0_gw directory\n"
@@ -116,31 +115,31 @@ copyTheBasePackToDirsPattern3(){
   cd 0_gw
   extractTheBasePack
 
-  LOG_STATEMENT="Copying the DBMS connector  [5/19]\n"
+  LOG_STATEMENT="Copying the DBMS connector  [4/18]\n"
   printINFOLog
   cp $pathToMySQLConnectorFile $extractedPackDirName/repository/components/lib
   LOG_STATEMENT="Copied the DBMS connector\n"
   printINFOLog
 
-  LOG_STATEMENT="Copying the extracted content to 1_tm  [6/19]\n"
+  LOG_STATEMENT="Copying the extracted content to 1_tm  [5/18]\n"
   printINFOLog
   cp -a $extractedPackDirName ../1_tm
   LOG_STATEMENT="Copied the extracted content to 1_tm\n"
   printINFOLog
 
-  LOG_STATEMENT="Copying the extracted content to 2_km [7/19]\n"
+  LOG_STATEMENT="Copying the extracted content to 2_km [6/18]\n"
   printINFOLog
   cp -a $extractedPackDirName ../2_km
   LOG_STATEMENT="Copied the extracted content to 2_km\n"
   printINFOLog
 
-  LOG_STATEMENT="Copying the extracted content to 3_pub [8/19]\n"
+  LOG_STATEMENT="Copying the extracted content to 3_pub [7/18]\n"
   printINFOLog
   cp -a $extractedPackDirName ../3_pub
   LOG_STATEMENT="Copied the extracted content to 3_pub\n"
   printINFOLog
 
-  LOG_STATEMENT="Copying the extracted content to 4_store [9/19]\n"
+  LOG_STATEMENT="Copying the extracted content to 4_store [8/18]\n"
   printINFOLog
   cp -a $extractedPackDirName ../4_store
   LOG_STATEMENT="Copied the extracted content to 4_store\n"
@@ -148,37 +147,37 @@ copyTheBasePackToDirsPattern3(){
 
   cd ..
 
-  LOG_STATEMENT="Creating the gateway worker profile [10/19]\n"
+  LOG_STATEMENT="Creating the gateway worker profile [9/18]\n"
   printINFOLog
   sh 0_gw/wso2am-3.2.0/bin/profileSetup.sh -Dprofile=gateway-worker
   LOG_STATEMENT="Created the gateway worker profile\n"
   printINFOLog
  
-  LOG_STATEMENT="Creating the traffic manager profile [11/19]\n"
+  LOG_STATEMENT="Creating the traffic manager profile [10/18]\n"
   printINFOLog
   sh 1_tm/wso2am-3.2.0/bin/profileSetup.sh -Dprofile=traffic-manager
   LOG_STATEMENT="Created the traffic manager profile\n"
   printINFOLog
   
-  LOG_STATEMENT="Creating the key manager profile [12/19]\n"
+  LOG_STATEMENT="Creating the key manager profile [11/18]\n"
   printINFOLog
   sh 2_km/wso2am-3.2.0/bin/profileSetup.sh -Dprofile=api-key-manager
   LOG_STATEMENT="Created the key manager profile\n"
   printINFOLog
 
-  LOG_STATEMENT="Creating the publisher profile [13/19]\n"
+  LOG_STATEMENT="Creating the publisher profile [12/18]\n"
   printINFOLog
   sh 3_pub/wso2am-3.2.0/bin/profileSetup.sh -Dprofile=api-publisher
   LOG_STATEMENT="Created the publisher profile\n"
   printINFOLog
 
-  LOG_STATEMENT="Creating the dev portal profile [14/19]\n"
+  LOG_STATEMENT="Creating the dev portal profile [13/18]\n"
   printINFOLog
   sh 4_store/wso2am-3.2.0/bin/profileSetup.sh -Dprofile=api-devportal
   LOG_STATEMENT="Created the dev portal profile\n"
   printINFOLog
 
-  LOG_STATEMENT="Configuring databases by executing scripts [15/19]\n[APIM_DB] => $APIM_DB_WSO2AM_320\n[SHARED_DB] => $SHARED_DB_WSO2AM_320\nYou need to enter the MySQL root password to continue this step\n"
+  LOG_STATEMENT="Configuring databases by executing scripts [14/18]\n[APIM_DB] => $APIM_DB_WSO2AM_320\n[SHARED_DB] => $SHARED_DB_WSO2AM_320\nYou need to enter the MySQL root password to continue this step\n"
   printINFOLog
 
   cd 0_gw/wso2am-3.2.0/dbscripts
@@ -209,7 +208,7 @@ copyTheBasePackToDirsPattern3(){
   mv ../distributed_deployment/3_pub/wso2am-3.2.0/repository/conf/api-publisher.toml ../distributed_deployment/3_pub/wso2am-3.2.0/repository/conf/deployment.toml
   mv ../distributed_deployment/4_store/wso2am-3.2.0/repository/conf/api-devportal.toml ../distributed_deployment/4_store/wso2am-3.2.0/repository/conf/deployment.toml
 
-  LOG_STATEMENT="Starting to replacing deployment.toml files in all 5 nodes by taking from the toml_files directory [16/19]\n"
+  LOG_STATEMENT="Starting to replacing deployment.toml files in all 5 nodes by taking from the toml_files directory [15/18]\n"
   printINFOLog
 
   LOG_STATEMENT="deployment.toml file replacement is success\n"
@@ -217,7 +216,7 @@ copyTheBasePackToDirsPattern3(){
 
   cd ../distributed_deployment
 
-  LOG_STATEMENT="Starting to change root user configurations in deployment.toml files [17/19]\n"
+  LOG_STATEMENT="Starting to change root user configurations in deployment.toml files [16/18]\n"
   printINFOLog
 
   #FOR MAC OS,
@@ -238,7 +237,7 @@ copyTheBasePackToDirsPattern3(){
   LOG_STATEMENT="MySQL root username change is completed successfully files\n"
   printINFOLog
 
-  LOG_STATEMENT="Starting to change [database.shared_db] database name configurations in deployment.toml files [18/19]\n"
+  LOG_STATEMENT="Starting to change [database.shared_db] database name configurations in deployment.toml files [17/18]\n"
   printINFOLog
 
   sed -i '' "s/SHARED_DB_WSO2AM_320/$SHARED_DB_WSO2AM_320/gi" 0_gw/wso2am-3.2.0/repository/conf/deployment.toml
@@ -250,7 +249,7 @@ copyTheBasePackToDirsPattern3(){
   LOG_STATEMENT="[database.shared_db] database name configurations changes successfully completed\n"
   printINFOLog
 
-  LOG_STATEMENT="Starting to change [database.apim_db] database name configurations in deployment.toml files [19/19]\n"
+  LOG_STATEMENT="Starting to change [database.apim_db] database name configurations in deployment.toml files [18/18]\n"
   printINFOLog
 
   sed -i '' "s/APIM_DB_WSO2AM_320/$APIM_DB_WSO2AM_320/gi" 1_tm/wso2am-3.2.0/repository/conf/deployment.toml
@@ -270,18 +269,8 @@ copyTheBasePackToDirsPattern3(){
   printConfigDetail
 }
 
-installUnzip(){
-  LOG_STATEMENT="Trying to install Unzip  [1/19]\nYou need to enter the root user credentials to continue\n"
-  printINFOLog
-  
-  sudo apt-get install unzip
-  
-  LOG_STATEMENT="Installed Unzip\n"
-  printINFOLog
-}
-
 extractTheBasePack(){
-  LOG_STATEMENT="Extracting the ZIP file  [4/19]\n"
+  LOG_STATEMENT="Extracting the ZIP file  [3/18]\n"
   printINFOLog
   
   unzip $zipFilename
@@ -373,7 +362,7 @@ init(){
         exit 1
     fi
 
-    LOG_STATEMENT="\n\nDEPLOYMENT DETAILS \n\n* Deployment Pattern: $deploymentPattern \n* Base Pack Path: $pathToBasePack\n* ZIP Name: $zipFilename\n* Dirctory Name Of The Extracted Content: $extractedPackDirName \n\n"
+    LOG_STATEMENT="\n\nDEPLOYMENT DETAILS \n\n* Deployment Pattern: $deploymentPattern \n* Base Pack Path: $pathToBasePack\n* ZIP Name: $zipFilename\n* Directory Name Of The Extracted Content: $extractedPackDirName \n\n"
     printConfigDetail
 
     LOG_STATEMENT="\n\nDATABASE DETAILS \n\n* JDBC Connector File Path: $pathToMySQLConnectorFile \n* ROOT User Name: $MYSQL_ROOT_USERNAME\n* APIM Database Name: $APIM_DB_WSO2AM_320\n* Shared Database Name: $SHARED_DB_WSO2AM_320\n\n"
