@@ -11,7 +11,7 @@ Thank you for using the APIM Deployer script to deploy the API Manager 4.0.0 in 
     ###EXAMPLE
         ```sh APIM_DEPLOYER_MAC.sh -f /home/sumudu/.wum3/products/wso2am/4.0.0/wso2am-4.0.0.zip -z wso2am-4.0.0.zip -b wso2am-4.0.0 -d FULL -r root -p PASSWORD -c /home/sumudu/.wum3/products/wso2am/mysql-connector-java-8.0.27.jar -a TEST_APIM_DB -s TEST_SHARED_DB -u 91```
 
-## For Linux OS users can use the below command to deploy the API Manager 3.2.0 in fully distributed way.
+## For Linux OS users can use the below command to deploy the API Manager 4.0.0 in fully distributed way.
 
     ###FORMAT
         ```sh APIM_DEPLOYER_LINUX.sh -f <APIM_ZIP_PATH>/<APIM_ZIP_FILE_NAME> -z <APIM_ZIP_FILE_NAME> -b wso2am-4.0.0 -d <DEPLOYMENT_PATTERN> -r <MYSQL_ROOT_USERNAME> -p <MYSQL_ROOT_PASSWORD> -c <JDBC_CONNECTOR_JAR_LOCATION>/<JDBC_CONNECTOR_JAR_NAME> -a <APIM_DATABASE_NAME> -s <SHARED_DATABASE_NAME>  -u <UPDATE_LEVEL_TO_INSTALL>```
@@ -20,33 +20,37 @@ Thank you for using the APIM Deployer script to deploy the API Manager 4.0.0 in 
         ```sh APIM_DEPLOYER_LINUX.sh -f /home/sumudu/.wum3/products/wso2am/4.0.0/wso2am-4.0.0.zip -z wso2am-4.0.0.zip -b wso2am-4.0.0 -d FULL -r root -p PASSWORD -c /home/sumudu/.wum3/products/wso2am/mysql-connector-java-8.0.27.jar -a TEST_APIM_DB -s TEST_SHARED_DB -u 91```
 
 ## Flags 
--v  --version => To get the version of this script
+`-v` => To get the version of this script
 
-```Eg: \n sh APIM_DEPLOYER_<OS>.sh -v```
+```
+Eg: \n sh APIM_DEPLOYER_<OS>.sh -v
+```
 
--h  --help => Get all the information regarding this script
+`-h` => Get all the information regarding this script
 
-```Eg: \n sh APIM_DEPLOYER_<OS>.sh -h```
+```
+Eg: \n sh APIM_DEPLOYER_<OS>.sh -h
+```
 
--d  => Parse the deployment pattern here
-Available patterns
-* FULL => Traffic Manager separated deployment. (Control Plane, Traffic Manager and Gateway Worker)
-* GWCP => Gateway Worker and Control Plane deployment. (Control Plane and Gateway Worker)
+`-d` => Parse the deployment pattern here Available patterns
 
--f  => Base pack location path
+- FULL => Traffic Manager separated deployment. (Control Plane, Traffic Manager and Gateway Worker)
+- GWCP => Gateway Worker and Control Plane deployment. (Control Plane and Gateway Worker)
 
--z  => ZIP file name of the APIM pack (Eg: wso2am-4.0.0.zip)
+`-f` => Base pack location path
 
--b  => Extracted directory name of the pack. You can take this name inside the ZIP file. (Eg: wso2am-4.0.0)
+`-z` => ZIP file name of the APIM pack (Eg: wso2am-4.0.0.zip)
 
--r  => Root user name of the MySQL server
+`-b` => Extracted directory name of the pack. You can take this name inside the ZIP file. (Eg: wso2am-4.0.0)
 
--p  => Root user password of the MySQL server
+`-r` => Root user name of the MySQL server
 
--c  => Path of the MySQL JDBC connector Jar
+`-p` => Root user password of the MySQL server
 
--a  => APIM database name
+`-c` => Path of the MySQL JDBC connector Jar
 
--s  => SHARED database name
+`-a` => APIM database name
 
--u  => Update level that needs to update the pack during the deployment. (Optional)
+`-s` => SHARED database name
+
+`-u` => Update level that needs to update the pack during the deployment. (Optional)
