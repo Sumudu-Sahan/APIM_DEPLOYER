@@ -130,6 +130,7 @@ checkTheUpdateFlagAndUpdate(){
       LOG_STATEMENT="Updated the API Manager pack to level: $UPDATE_LEVEL\n"
       printINFOLog
     else
+     cd ../../distributed_deployment/0_gw/$extractedPackDirName/bin
      LOG_STATEMENT="Skipping the update script and continue the deployment\n"
      printINFOLog
   fi
@@ -205,7 +206,7 @@ copyTheDBMSConnector(){
             pathToMySQLConnectorFile="mysql-connector-java-${connector_version}.jar"
         fi
   fi
-
+pwd
   LOG_STATEMENT="Copying the MySQL JDBC connector $pathToMySQLConnectorFile Jar file\n"
   printINFOLog
   cp $pathToMySQLConnectorFile $extractedPackDirName/repository/components/lib
@@ -226,8 +227,8 @@ downloadAPIMPack(){
   printINFOLog
   extractedDirectoryName="APIM_PACK"
   zipFileNameDownloaded="$extractedDirectoryName.zip"
-  curl "https://product-dist.wso2.com/products/api-manager/$APIM_VERSION/$zipFilename" -H "authority: product-dist.wso2.com" -H "referer: https://wso2.com/" > $zipFileNameDownloaded
-  #curl "http://localhost:3000/apim_pack" -H "authority: product-dist.wso2.com" -H "referer: https://wso2.com/" > $zipFileNameDownloaded
+  #curl "https://product-dist.wso2.com/products/api-manager/$APIM_VERSION/$zipFilename" -H "authority: product-dist.wso2.com" -H "referer: https://wso2.com/" > $zipFileNameDownloaded
+  curl "http://localhost:3000/apim_pack" -H "authority: product-dist.wso2.com" -H "referer: https://wso2.com/" > $zipFileNameDownloaded
 
   LOG_STATEMENT="Downloaded the API Manager $APIM_VERSION pack\n"
   printINFOLog

@@ -128,6 +128,7 @@ checkTheUpdateFlagAndUpdate(){
       LOG_STATEMENT="Updated the API Manager pack to level: $UPDATE_LEVEL\n"
       printINFOLog
     else
+     cd ../../distributed_deployment/0_gw/$extractedPackDirName/bin
      LOG_STATEMENT="Skipping the update script and continue the deployment\n"
      printINFOLog
   fi
