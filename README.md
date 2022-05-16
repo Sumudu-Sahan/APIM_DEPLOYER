@@ -28,3 +28,35 @@ EXAMPLE
 ```bash
 sh APIM_DEPLOYER_LINUX.sh -f /home/sumudu/.wum3/products/wso2am/3.2.0/full/dist/wso2am-3.2.0+<WUM_LEVEL>.full.zip -z wso2am-3.2.0+<WUM_LEVEL>.full.zip -b wso2am-3.2.0 -d full -r root -p PASSWORD -c /home/sumudu/.wum3/products/wso2am/3.2.0/full/dist/mysql-connector-java-8.0.27.jar -a TEST_APIM_DB -s TEST_SHARED_DB
 ```
+### Flags
+`-v` => To get the version of this script
+
+```
+Eg: \n sh APIM_DEPLOYER_<OS>.sh -v
+```
+
+`-h` => Get all the information regarding this script
+
+```
+Eg: \n sh APIM_DEPLOYER_<OS>.sh -h
+```
+
+`-d` => Parse the deployment pattern here Available patterns
+
+- full => Fully distributed deployment. (KM, TM, PUB, STORE and GW deployment)
+
+`-f` => Base pack location path
+
+`-z` => ZIP file name of the APIM pack (Eg: wso2am-4.0.0.zip)
+
+`-b` => Extracted directory name of the pack. You can take this name inside the ZIP file. (Eg: wso2am-3.2.0)
+
+`-r` => Root user name of the MySQL server
+
+`-p` => Root user password of the MySQL server
+
+`-c` => Path of the MySQL JDBC connector Jar
+
+`-a` => APIM database name
+
+`-s` => SHARED database name
