@@ -1,0 +1,27 @@
+{
+	"username": "sumudu@wso2.com",
+	"trial-subscription-id": "",
+	"update-level": "-1",
+	"channel": "full",
+	"environment": "",
+	"backup-dir": "/home/sumudu/.wso2-updates",
+	"product": {
+		"pattern": "wso2am-4.0.0",
+		"name": "wso2am",
+		"version": "4.0.0",
+		"backup": "",
+		"backup-size": 0
+	},
+	"services": {
+		"wso2": {
+			"enabled": true,
+			"name": "WSO2 Update Repository",
+			"url": "https://gateway.api.cloud.wso2.com/t/updateslive",
+			"token-url": "https://gateway.api.cloud.wso2.com/token",
+			"app-key": "Njg4bTVXTzFDSGlLWGFTT216MDJKOUxMRDYwYTpSOGJnZERXb2pLY0dTdVUyQWhDdzN3OWY3OGNh",
+			"access-token": "27b2594f-2e4a-3cbc-9933-ea901af73873",
+			"refresh-token": "99a783e4-db06-3231-b089-ef4ae25829d7"
+		}
+	},
+	"hotfixes": null
+}
