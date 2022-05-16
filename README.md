@@ -63,7 +63,7 @@ Eg: \n sh APIM_DEPLOYER_<OS>.sh -h
 
 `-f` => Base pack location path
 
-`-z` => ZIP file name of the APIM pack (Eg: wso2am-4.0.0.zip)
+`-z` => ZIP file name of the APIM pack (Eg: wso2am-3.2.0.zip)
 
 `-b` => Extracted directory name of the pack. You can take this name inside the ZIP file. (Eg: wso2am-3.2.0)
 
