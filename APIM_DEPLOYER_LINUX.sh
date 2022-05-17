@@ -28,7 +28,7 @@ LOG_STATEMENT=""
 timestamp=""
 
 printVersion(){
-  printf "V1.0.0\n"
+  printf "V1.1.0\n"
 }
 
 printUsage(){
