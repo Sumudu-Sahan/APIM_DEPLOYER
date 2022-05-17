@@ -1,4 +1,5 @@
 [server]
+hostname = "localhost"
 #hostname = "tm.wso2.com"
 offset=1
 server_role = "traffic-manager"

@@ -227,8 +227,8 @@ downloadAPIMPack(){
   printINFOLog
   extractedDirectoryName="APIM_PACK"
   zipFileNameDownloaded="$extractedDirectoryName.zip"
-  #curl "https://product-dist.wso2.com/products/api-manager/$APIM_VERSION/$zipFilename" -H "authority: product-dist.wso2.com" -H "referer: https://wso2.com/" > $zipFileNameDownloaded
-  curl "http://localhost:3000/apim_pack" -H "authority: product-dist.wso2.com" -H "referer: https://wso2.com/" > $zipFileNameDownloaded
+  curl "https://product-dist.wso2.com/products/api-manager/$APIM_VERSION/$zipFilename" -H "authority: product-dist.wso2.com" -H "referer: https://wso2.com/" > $zipFileNameDownloaded
+  #curl "http://localhost:3000/apim_pack" -H "authority: product-dist.wso2.com" -H "referer: https://wso2.com/" > $zipFileNameDownloaded
 
   LOG_STATEMENT="Downloaded the API Manager $APIM_VERSION pack\n"
   printINFOLog

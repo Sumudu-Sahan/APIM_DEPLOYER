@@ -1,4 +1,5 @@
 [server]
+hostname = "localhost"
 #hostname = "gw.wso2.com"
 server_role = "gateway-worker"
 
